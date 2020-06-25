@@ -20,7 +20,7 @@ export default class Rating {
   }
 
   /*
-    O GraphQL manda o DateTime de forma perfeita para o parse no JS
+    O GraphQL manda o DateTime de forma perfeita para o parse no TS
   */
 
   public static fromJson(json : any) : Rating {
