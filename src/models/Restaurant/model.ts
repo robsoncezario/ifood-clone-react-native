@@ -4,6 +4,7 @@ import Rating from '../Rating/model';
 export default class Restaurant {
   public id?: number;
   public name?: string;
+  public description?: string;
   public address?: Address;
   public rating?: Array<Rating>;
   public createdAt?: Date;
@@ -12,6 +13,7 @@ export default class Restaurant {
   public constructor(
     id: number,
     name: string,
+    description: string,
     address: any,
     rating: Array<any>,
     createdAt: Date,
@@ -19,6 +21,7 @@ export default class Restaurant {
   ) {
     this.id = id;
     this.name = name;
+    this.description = description;
     this.address = Address.fromJson(address);
     this.rating = rating.map((a: any) => Rating.fromJson(a));
     this.createdAt = createdAt;
@@ -29,6 +32,7 @@ export default class Restaurant {
     return new Restaurant(
       json?.id,
       json?.name,
+      json?.description,
       json?.address,
       json?.rating,
       new Date(json?.createdAt),
@@ -40,6 +44,7 @@ export default class Restaurant {
     return {
       id: this.id, 
       name: this.name,
+      description: this.description,
       address: this.address?.toJson(),
       rating: this.rating?.map(r => r.toJson()),
       createdAt: this.createdAt?.toISOString(),
