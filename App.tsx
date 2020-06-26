@@ -5,10 +5,10 @@ import React, {
 } from 'react';
 import { RecoilRoot } from 'recoil';
 
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
 import loadFontsAsync from './src/theme/fonts';
+import BottomNavigationBar from './src/screens/navigation';
 
 const App = () => {
   /*
@@ -19,8 +19,9 @@ const App = () => {
 
   useEffect(() => {
     (async () => {
-      await loadFontsAsync();
-      setReady(true);
+      await loadFontsAsync().then(() => {
+        setReady(true);
+      });
     })(); 
   }, []);
 
@@ -28,10 +29,7 @@ const App = () => {
     <>
       {isReady === true && (
         <RecoilRoot>
-          <View style={styles.container}>
-            <Text style={styles.title}>iFood, inicio</Text>
-            <StatusBar style="auto" />
-          </View>
+          <BottomNavigationBar />
         </RecoilRoot>
       )}
     </>
@@ -39,18 +37,3 @@ const App = () => {
 }
 
 export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  title: {
-    fontFamily: 'SulSans-Bold',
-    fontSize: 40,
-    color: 'Black'
-  }
-});
