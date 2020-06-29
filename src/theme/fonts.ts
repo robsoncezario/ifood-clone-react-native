@@ -15,14 +15,16 @@ export default () : Promise<void> => {
 
 export class iFoodIcons {
   static cupom: string = "\u0041";
-  static homeFilled: string = "\u0042";
-  static homeOutlined: string = "\u0043";
-  static orderFilled: string = "\u0044";
-  static orderOutlined: string = "\u0045";
-  static perfilFilled: string = "\u0046";
-  static perfilOutlined: string = "\u0047";
-  static searchFilled: string = "\u0048";
-  static searchInput: string = "\u0049";
-  static searchOutlined: string = "\u004a";
-  static star: string = "\u004b";
+  static homeFilled: string = "\u0043";
+  static homeOutlined: string = "\u0044";
+  static orderFilled: string = "\u0045";
+  static orderOutlined: string = "\u0046";
+  static perfilFilled: string = "\u0047";
+  static perfilOutlined: string = "\u0048";
+  static searchFilled: string = "\u004a";
+  static searchInput: string = "\u004b";
+  static searchOutlined: string = "\u004c";
+  static star: string = "\u004d";
+  static downChevron: string = "\u0042";
+  static rightChevron: string = "\u0049";
 }

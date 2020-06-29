@@ -11,7 +11,7 @@ const useStyles = (props: any) => StyleSheet.create({
   },
 
   icon: {
-    fontSize: 16,
+    fontSize: 24,
     fontFamily: 'iFood-Icons',
     color: props.color
   },

@@ -1,18 +1,17 @@
-import React, { useContext } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-
-
-
+import React from 'react';
+import { 
+  StyleSheet, 
+  View
+} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { Screen } from './screen';
 import Tab from '../../components/Tab';
 
-
 import { iFoodIcons } from '../../theme/fonts';
-import HomeScreen  from '../../screens/Home/index';
-
+import HomeScreen  from '../../screens/home/index';
+import SearchScreen from '../search';
 
 const styles = StyleSheet.create({
   container: {
@@ -40,7 +39,7 @@ const BottomNavigationBar = () => {
       'Busca',
       iFoodIcons.searchOutlined,
       iFoodIcons.searchFilled,
-      HomeScreen
+      SearchScreen
     ),
 
     new Screen(

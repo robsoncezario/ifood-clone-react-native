@@ -13,10 +13,6 @@ export const addressSelector = selector({
   get: ({get} : any) => {
     const value = get(addressState);
 
-    if(value !== null) {
-      return 'Já encontrou';
-    }
-    
-    return '';
+    return value?.formatted;
   }
 }); 

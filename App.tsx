@@ -10,7 +10,6 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import loadFontsAsync from './src/theme/fonts';
 import BottomNavigationBar from './src/screens/navigation';
-import GeolocatorService from './src/geolocator';
 
 const App = () => {
   const [isReady, setReady] = useState(false);
@@ -20,12 +19,6 @@ const App = () => {
       await loadFontsAsync().then(() => {
         setReady(true);
       });
-
-      await GeolocatorService
-        .getLocation()
-        .then((value) => {
-          console.log(value);
-        });
     })(); 
   }, []);
 
