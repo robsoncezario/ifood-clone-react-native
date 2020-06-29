@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
-    alignSelf: 'center',
     shadowOffset: {  
       width: 0,  
       height: 2,  
@@ -24,11 +23,12 @@ const styles = StyleSheet.create({
     elevation: 1,
     borderBottomWidth: 0,
     borderRadius: 0,
-    padding: 10
+    padding: 10,
+    margin: 0
   },
 
   row: {
-    width: '90%',
+    width: '100%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',   
