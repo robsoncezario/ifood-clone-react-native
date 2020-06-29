@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: 'SulSans-Bold',
     fontSize: 40,
-    color: 'Black'
+    color: '#000000'
   }
 });
 

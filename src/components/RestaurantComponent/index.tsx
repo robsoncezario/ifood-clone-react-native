@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   name: {
     fontFamily: 'SulSans-Bold',
     fontSize: 15,
-    color: 'Black'
+    color: '#000000'
   },
 
   description: {
