@@ -37,7 +37,8 @@ const CategoryComponent = (props: any) => {
       <Image style={styles.thumb}
              source={{uri: props.category.imageSrc}}/>
 
-      <Text style={styles.label}>{props.category.name}</Text>
+      <Text style={styles.label}
+            numberOfLines={1}>{props.category.name}</Text>
     </View>
   );
 }

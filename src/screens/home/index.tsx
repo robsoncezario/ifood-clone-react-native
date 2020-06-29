@@ -118,8 +118,6 @@ const HomeScreen = () => {
               
             }
           </ScrollView>
-
-          <Text style={styles.title}>iFood, homescreen '-'</Text>
         </View>
       </ScrollView>
     </View>
