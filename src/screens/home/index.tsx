@@ -112,7 +112,8 @@ const HomeScreen = () => {
           <ScrollView horizontal={true} 
                       style={styles.categoryAligner}>
             {categoryList.map(category => (
-              <CategoryComponent category={category}></CategoryComponent>
+              <CategoryComponent key={category.name}
+                                 category={category}></CategoryComponent>
             ))
               
             }
