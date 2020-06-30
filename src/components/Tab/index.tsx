@@ -1,5 +1,9 @@
-import React, { useContext } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { 
+  StyleSheet, 
+  Text, 
+  TouchableOpacity 
+} from 'react-native';
 
 const useStyles = (props: any) => StyleSheet.create({
   btn: {

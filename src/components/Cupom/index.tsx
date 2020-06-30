@@ -13,18 +13,10 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
-    shadowOffset: {  
-      width: 0,  
-      height: 2,  
-    },
-    shadowColor: '#000000',
-    shadowRadius: 4,
-    shadowOpacity: 0.2,
-    elevation: 1,
-    borderBottomWidth: 0,
-    borderRadius: 0,
-    padding: 10,
-    margin: 0
+    borderColor: 'rgb(232, 232, 232)',
+    borderWidth: 1,
+    borderRadius: 4,
+    padding: 10
   },
 
   row: {

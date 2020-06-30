@@ -8,13 +8,13 @@ import {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     width: 80,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
-    marginLeft: 10,
-    marginRight: 10
+    marginRight: 15
   },
 
   thumb: {

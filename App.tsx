@@ -4,12 +4,10 @@ import React, {
   useEffect 
 } from 'react';
 import { RecoilRoot } from 'recoil';
-import { Provider as PaperProvider } from 'react-native-paper';
-
-import { StyleSheet, Text, View } from 'react-native';
 
 import loadFontsAsync from './src/theme/fonts';
 import BottomNavigationBar from './src/screens/navigation';
+import { SafeAreaView } from 'react-native';
 
 const App = () => {
   const [isReady, setReady] = useState(false);
@@ -26,9 +24,9 @@ const App = () => {
     <>
       {isReady === true && (
         <RecoilRoot>
-          <PaperProvider>
+          <SafeAreaView style={{flex: 1}}>
             <BottomNavigationBar />
-          </PaperProvider>
+          </SafeAreaView>
         </RecoilRoot>
       )}
     </>

@@ -1,14 +1,16 @@
 import React from 'react';
 import { 
   StyleSheet, 
-  Text, 
   View,
-  ScrollView 
+  ScrollView,
+  Dimensions
 } from 'react-native';
+
 import AppBar from './AppBar';
 import CupomComponent from '../../components/Cupom';
 import Category from '../../models/Category/model';
 import CategoryComponent from '../../components/Category';
+import Slider from '../../components/Slider';
 
 const styles = StyleSheet.create({
   container: {
@@ -28,9 +30,10 @@ const styles = StyleSheet.create({
   },
 
   scrollView: {
-    paddingLeft: 20,
-    paddingRight: 20,
-    paddingTop: 14,
+    flex: 1,
+    paddingLeft: 25,
+    paddingRight: 25,
+    paddingTop: 14
   },
 
   aligner: {
@@ -101,6 +104,7 @@ const HomeScreen = () => {
       'https://i.imgur.com/EPjQa0k.png'
     )
   ];
+
   return (
     <View style={styles.container}>
       <AppBar />
@@ -110,7 +114,8 @@ const HomeScreen = () => {
           <CupomComponent value={8} />
 
           <ScrollView horizontal={true} 
-                      style={styles.categoryAligner}>
+                      style={styles.categoryAligner}
+                      showsHorizontalScrollIndicator={false}>
             {categoryList.map(category => (
               <CategoryComponent key={category.name}
                                  category={category}></CategoryComponent>
@@ -118,6 +123,8 @@ const HomeScreen = () => {
               
             }
           </ScrollView>
+
+          <Slider/> 
         </View>
       </ScrollView>
     </View>

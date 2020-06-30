@@ -10,6 +10,7 @@ import { Screen } from './screen';
 import Tab from '../../components/Tab';
 
 import { iFoodIcons } from '../../theme/fonts';
+
 import HomeScreen  from '../../screens/home/index';
 import SearchScreen from '../search';
 
@@ -20,7 +21,9 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-around',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    borderTopColor: 'rgb(232, 232, 232)',
+    borderTopWidth: 1
   }
 });
 

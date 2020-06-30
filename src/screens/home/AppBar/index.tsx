@@ -9,6 +9,7 @@ import { useRecoilState } from 'recoil';
 
 import * as atoms from '../../../geolocator/atom';
 import GeolocatorService from '../../../geolocator';
+
 import { iFoodIcons } from '../../../theme/fonts';
 
 const styles = StyleSheet.create({
@@ -26,15 +27,8 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     flexDirection: 'column',
-    shadowOffset: {  
-      width: 0,  
-      height: 2,  
-    },
-    shadowColor: '#000000',
-    shadowRadius: 4,
-    shadowOpacity: 0.2,
-    elevation: 1,
-    borderBottomWidth: 0,
+    borderBottomColor: 'rgb(232, 232, 232)',
+    borderBottomWidth: 1
   },
 
   row: {
@@ -45,7 +39,7 @@ const styles = StyleSheet.create({
   },
 
   label: {
-    fontFamily: 'SulSans-Regular',
+    fontFamily: 'SulSans-Light',
     fontSize: 14,
     color: 'rgb(166, 165, 165)',
     textTransform: 'uppercase'
@@ -81,14 +75,14 @@ const AppBar = () => {
   const formattedAddress = address
     ?.formatted
     ?.split(',')
-     .slice(0, 2)
-     .join(',')
+    ?.slice(0, 2)
+    ?.join(',')
 
   return (
     <View style={styles.container}>
       <Text style={styles.label}>Entregar em</Text>
       <View style={styles.row}>
-        <Text style={styles.address}>{formattedAddress}</Text>
+        <Text style={styles.address}>{formattedAddress ?? '...'}</Text>
         <Text style={styles.downChevron}>{iFoodIcons.downChevron}</Text>
       </View>
     </View>
