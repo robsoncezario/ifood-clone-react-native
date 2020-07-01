@@ -3,7 +3,9 @@ import {
   selector
 } from 'recoil';
 
-export const addressState = atom<any>({
+import Address from '../models/Address/model';
+
+export const addressState = atom<null | Address>({
   key: 'addressState',
   default: null
 }); 

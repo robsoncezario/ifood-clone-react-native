@@ -84,7 +84,7 @@ export default class Restaurant {
   }
 
   // Pendência: Valor base + acréscimo da distância por km/h, aparentemente o iFood faz isso.
-  get deliveryPrice() : number | undefined {
-    return this._deliveryPrice;
+  get deliveryPrice() : number {
+    return this!._deliveryPrice as number;
   }
 }

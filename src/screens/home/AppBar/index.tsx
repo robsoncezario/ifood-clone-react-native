@@ -11,6 +11,7 @@ import * as atoms from '../../../geolocator/atom';
 import GeolocatorService from '../../../geolocator';
 
 import { iFoodIcons } from '../../../theme/fonts';
+import Address from '../../../models/Address/model';
 
 const styles = StyleSheet.create({
   container: {
@@ -67,22 +68,16 @@ const AppBar = () => {
       await GeolocatorService
         .getLocation()
         .then((value) => {
-          setAddress(value);
+          setAddress(Address.fromGeocoder(value));
         });
     })(); 
   }, []);
-
-  const formattedAddress = address
-    ?.formatted
-    ?.split(',')
-    ?.slice(0, 2)
-    ?.join(',')
 
   return (
     <View style={styles.container}>
       <Text style={styles.label}>Entregar em</Text>
       <View style={styles.row}>
-        <Text style={styles.address}>{formattedAddress ?? '...'}</Text>
+        <Text style={styles.address}>{address?.format('%s, %n, %N')?.replace(', ,', ',') ?? '...'}</Text>
         <Text style={styles.downChevron}>{iFoodIcons.downChevron}</Text>
       </View>
     </View>
