@@ -11,6 +11,9 @@ import CupomComponent from '../../components/Cupom';
 import Category from '../../models/Category/model';
 import CategoryComponent from '../../components/Category';
 import Slider from '../../components/Slider';
+import { useQuery } from '@apollo/react-hooks';
+import { homeQuery } from './queries';
+import CategoryView from './CategoryView';
 
 const styles = StyleSheet.create({
   container: {
@@ -49,61 +52,7 @@ const styles = StyleSheet.create({
 });
 
 const HomeScreen = () => {
-  const categoryList = [
-    new Category(
-      1,
-      'Mercado',
-      'https://i.imgur.com/dy0FkdH.png'
-    ),
-
-    new Category(
-      2,
-      'Promoções',
-      'https://i.imgur.com/0C0Iaim.png'
-    ),
-
-    new Category(
-      3,
-      'Lanches',
-      'https://i.imgur.com/9JDdJo0.png'
-    ),
-
-    new Category(
-      4,
-      'Pizza',
-      'https://i.imgur.com/Hyq0DC9.png'
-    ),
-
-    new Category(
-      5,
-      'Vegetariana',
-      'https://i.imgur.com/lBImBd9.png'
-    ),
-
-    new Category(
-      7,
-      'Brasileira',
-      'https://i.imgur.com/dwPnj9m.png'
-    ),
-
-    new Category(
-      8,
-      'Bebidas',
-      'https://i.imgur.com/B8TNrYa.png'
-    ),
-
-    new Category(
-      9,
-      'Açai',
-      'https://i.imgur.com/5pAqhAw.png'
-    ),
-
-    new Category(
-      10,
-      'Doces & Bolos',
-      'https://i.imgur.com/EPjQa0k.png'
-    )
-  ];
+  const { data } = useQuery(homeQuery);
 
   return (
     <View style={styles.container}>
@@ -113,16 +62,7 @@ const HomeScreen = () => {
         <View style={styles.aligner}>
           <CupomComponent value={8} />
 
-          <ScrollView horizontal={true} 
-                      style={styles.categoryAligner}
-                      showsHorizontalScrollIndicator={false}>
-            {categoryList.map(category => (
-              <CategoryComponent key={category.name}
-                                 category={category}></CategoryComponent>
-            ))
-              
-            }
-          </ScrollView>
+          <CategoryView items={data?.fetchAllCategories} />
 
           <Slider/> 
         </View>

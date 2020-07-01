@@ -24,7 +24,8 @@ const useStyles = (props: any) => StyleSheet.create({
   image: {
     width: 267,
     height: 140,
-    marginRight: 10
+    marginRight: 10,
+    borderRadius: 4
   },
 
   dotsContainer: {
@@ -38,7 +39,7 @@ const useStyles = (props: any) => StyleSheet.create({
   dots: {
     height: 6, 
     width: 6, 
-    backgroundColor: '#000000', 
+    backgroundColor: '#3f3e3e', 
     margin: 4, 
     borderRadius: 6
   }
@@ -92,8 +93,8 @@ const Slider = () => {
         {itemList.map((item, index) => { 
           return ( 
             <Image key={index} 
-                    style={styles.image}
-                    source={item.imageSrc} />
+                   style={styles.image}
+                   source={item.imageSrc} />
           );
         })}
       </ScrollView>
@@ -103,10 +104,11 @@ const Slider = () => {
           const opacity = index === currentIndex ? 1.0 : 0.3;
 
           return ( 
-            <View style={{
-              ...styles.dots, 
-              ...{opacity}
-            }} />
+            <View key={index}
+                  style={{
+                    ...styles.dots, 
+                    ...{opacity}
+                  }} />
           );
         })}
       </View>

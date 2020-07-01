@@ -12,4 +12,12 @@ export default class Category {
     this.name = name;
     this.imageSrc = imageSrc;
   }
+
+  static fromJson(json: any) : Category {
+    return new Category(
+      json.id,
+      json.name,
+      json.imageSrc
+    );
+  }
 }

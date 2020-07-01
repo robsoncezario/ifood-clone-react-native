@@ -1,10 +1,10 @@
 {
-  "expoServerNgrokUrl": "https://c4-aut.anonymous.app.exp.direct",
-  "packagerNgrokUrl": "https://packager.c4-aut.anonymous.app.exp.direct",
-  "ngrokPid": 4184,
   "webpackServerPort": 19006,
   "expoServerPort": 19000,
+  "expoServerNgrokUrl": "https://c4-aut.anonymous.app.exp.direct",
+  "packagerNgrokUrl": "https://packager.c4-aut.anonymous.app.exp.direct",
+  "ngrokPid": 8652,
   "packagerPort": 19001,
-  "packagerPid": 12464,
+  "packagerPid": 11012,
   "devToolsPort": 19002
 }
