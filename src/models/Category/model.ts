@@ -20,4 +20,12 @@ export default class Category {
       json.imageSrc
     );
   }
+
+  toJson() : any {
+    return {
+      id: this.id,
+      name: this.name,
+      imageSrc: this.imageSrc
+    }
+  }
 }
