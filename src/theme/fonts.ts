@@ -1,4 +1,5 @@
 import * as Font from 'expo-font';
+import { ToolbarAndroidBase } from 'react-native';
 
 /*
   Vi no site deles que essa é a font que eles utilizam.

@@ -30,7 +30,7 @@ export default class Order {
     this.updatedAt = updatedAt;
   }
 
-  public static fromJson(json : any) : Order {
+  public static fromJson = (json : any) : Order => {
     return new Order(
       json?.id,
       json?.name,
@@ -43,7 +43,7 @@ export default class Order {
     );
   }
 
-  public toJson() : any {
+  public toJson = () : any => {
     return {
       id: this.id, 
       name: this.name,

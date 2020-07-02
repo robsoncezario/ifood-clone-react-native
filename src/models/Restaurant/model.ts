@@ -5,86 +5,87 @@ import Category from '../Category/model';
 export default class Restaurant {
   public id?: number;
   public name?: string;
-  public description?: string;
+  public imageSrc?: string;
   public category?: Category;
   public address?: Address;
   public rating?: Array<Rating>;
   public exclusive?: boolean;
-  public minDeliverInterval?: number;
-  public maxDeliverInterval?: number;
-  public minPrice?: number;
+  public minDeliveryInterval?: number;
+  public maxDeliveryInterval?: number;
+  public minDeliveryPrice?: number;
   public createdAt?: Date;
   public updatedAt?: Date;
 
-  private _deliveryPrice?: number;
+  private _deliveryCost?: number;
 
   public constructor(
     id: number,
     name: string,
-    description: string,
+    imageSrc: string,
     category: any,
     address: any,
     rating: Array<any>,
     exclusive: boolean,
-    minDeliverInterval: number,
-    maxDeliverInterval: number,
-    minPrice: number,
-    deliveryPrice: number,
+    minDeliveryInterval: number,
+    maxDeliveryInterval: number,
+    minDeliveryPrice: number,
+    deliveryCost: number,
     createdAt: Date,
     updatedAt: Date
   ) {
     this.id = id;
     this.name = name;
-    this.description = description;
+    this.imageSrc = imageSrc;
     this.category = Category.fromJson(category);
     this.address = Address.fromJson(address);
     this.rating = rating.map((a: any) => Rating.fromJson(a));
     this.exclusive = exclusive;
-    this.minDeliverInterval = minDeliverInterval;
-    this.maxDeliverInterval = maxDeliverInterval;
-    this.minPrice = minPrice;
-    this._deliveryPrice = deliveryPrice;
+    this.minDeliveryInterval = minDeliveryInterval;
+    this.maxDeliveryInterval = maxDeliveryInterval;
+    this.minDeliveryPrice = minDeliveryPrice;
+    this._deliveryCost = deliveryCost;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }
 
-  public static fromJson(json : any) : Restaurant {
+  public static fromJson = (json : any): Restaurant => {
     return new Restaurant(
       json?.id,
       json?.name,
-      json?.description,
+      json?.imageSrc,
       json?.category,
       json?.address,
       json?.rating,
       json?.exclusive, 
-      json?.minDeliverInterval,
-      json?.maxDeliverInterval,
-      json?.minPrice,
-      json?.deliveryPrice,
+      json?.minDeliveryInterval,
+      json?.maxDeliveryInterval,
+      json?.minDeliveryPrice,
+      json?.deliveryCost,
       new Date(json?.createdAt),
       new Date(json?.updatedAt)
     );
   }
 
-  public toJson() : any {
+  public toJson = (): any => {
     return {
       id: this.id, 
       name: this.name,
-      description: this.description,
+      imageSrc: this.imageSrc,
       category: this.category?.toJson(),
       address: this.address?.toJson(),
       rating: this.rating?.map(r => r.toJson()),
       exclusive: this.exclusive,
-      minDeliverInterval: this.minDeliverInterval,
-      maxDeliverInterval: this.maxDeliverInterval,
-      minPrice: this.minPrice,
+      minDeliveryInterval: this.minDeliveryInterval,
+      maxDeliveryInterval: this.maxDeliveryInterval,
+      minDeliveryPrice: this.minDeliveryPrice,
+      deliveryCost: this.deliveryCost,
       createdAt: this.createdAt?.toISOString(),
       updatedAt: this.updatedAt?.toISOString()
     }
   }
 
   // Pendência: Valor base + acréscimo da distância por km/h, aparentemente o iFood faz isso.
-  get deliveryPrice() : number {
-    return this!._deliveryPrice as number;
+  get deliveryCost(): number {
+    return this!._deliveryCost as number;
   }
 }

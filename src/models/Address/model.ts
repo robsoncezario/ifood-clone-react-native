@@ -1,6 +1,6 @@
 export default class Address {
-  public latitude?: number;
-  public longitude?: number;
+  public latitude!: number;
+  public longitude!: number;
   public postalCode?: string;
   public number?: string;
   public street?: string;
@@ -40,7 +40,7 @@ export default class Address {
     this.createdAt = createdAt;
   }
 
-  public static fromJson(json: any) : Address {
+  public static fromJson = (json: any): Address => {
     return new Address(
       json?.latitude,
       json?.longitude,
@@ -57,7 +57,7 @@ export default class Address {
     );
   }
 
-  public toJson() : Object {
+  public toJson = (): Object => {
     return {
       latitude: this?.latitude,
       longitude: this?.longitude,
@@ -74,7 +74,7 @@ export default class Address {
     };
   }
 
-  public static fromGeocoder(geoData: any) : Address {
+  public static fromGeocoder = (geoData: any) : Address => {
     const now = new Date();
 
     return new Address(
@@ -93,7 +93,7 @@ export default class Address {
     );
   }
 
-  public format(pattern: string) : string {
+  public format = (pattern: string): string => {
     return pattern.replace(new RegExp('%n'), this?.number ?? '')
                   .replace(new RegExp('%c'), this?.city ?? '')
                   .replace(new RegExp('%S'), this?.state ?? '')
@@ -101,5 +101,19 @@ export default class Address {
                   .replace(new RegExp('%N'), this?.neighborhood ?? '')
                   .replace(new RegExp('%s'), this?.street ?? '')
                   .replace(new RegExp('%cc'), this?.countryCode ?? '');
+  }
+
+  // A fórmula de Haversine me retorna me retorna a distância entre dois pontos.
+  // https://en.wikipedia.org/wiki/Haversine_formula
+  public getDistanceBetween = (address: Address): number => {
+    const toRadians = (deg : number) => deg * Math.PI / 180;
+
+    const lat: number = toRadians(address.latitude - this.latitude),
+          lng: number = toRadians(address.longitude - this.latitude);
+
+    const a: number = Math.sin(lat / 2) * Math.sin(lat / 2) +
+                       Math.cos(toRadians(this.latitude)) * Math.cos(toRadians(address.latitude)) *
+                       Math.sin(lng / 2) * Math.sin(lng / 2);
+    return 6371 * (2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
   }
 }

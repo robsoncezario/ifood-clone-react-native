@@ -9,44 +9,54 @@ import {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    boxSizing: 'border-box',
-    padding: 10,
     borderRadius: 4,
-    border: '1px solid #ddd',
+    borderColor: 'rgb(232, 232, 232)',
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    flexDirection: 'row',
+    marginTop: 10
+  },
+
+  image: {
+    width: 54,
+    height: 54,
+    resizeMode: 'cover',
+    margin: 12
+  },
+
+  description: {
+    borderLeftColor: 'rgb(232, 232, 232)',
+    borderLeftWidth: 1,
+    padding: 12,
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
-  },
-
-  logo: {
-    width: 32,
-    height: 32,
-    borderRadius: 16
-  },
-
-  column: {
-    display: 'flex',
-    alignItems: 'flex-start',
     justifyContent: 'flex-start',
     flexDirection: 'column'
   },
 
   name: {
     fontFamily: 'SulSans-Bold',
-    fontSize: 15,
-    color: '#000000'
-  },
-
-  description: {
-    fontFamily: 'SulSans-Regular',
-    fontSize: 15,
-    color: 'rgba(0, 0, 0, .7)' 
+    fontSize: 14,
+    color: 'rgb(62, 62, 62)'
   }
 });
 
-
 const RestaurantComponent = (props: any) => {
+  const restaurant = props.restaurant;
+
   return (
+    <View style={styles.container}>
+      <Image style={styles.image}
+             source={{uri: restaurant.imageSrc}}
+             resizeMode={'cover'} />
+
+      <View style={styles.description}>
+        <Text style={styles.name}>{restaurant.name}</Text>
+      </View>
+    </View>
+  )
+  /*return (
     <View style={styles.container}>
       <Image style={styles.logo}
              source={{uri: props.restaurant.imageSrc}} />
@@ -55,7 +65,7 @@ const RestaurantComponent = (props: any) => {
         <Text style={styles.description}>{props.restaurant.description}</Text>
       </View>
     </View>
-  );
+  ); */
 }
 
 export default RestaurantComponent;

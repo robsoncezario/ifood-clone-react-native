@@ -33,7 +33,7 @@ export default class Customer {
     this.updatedAt = updatedAt;
   }
 
-  public static fromJson(json : any) : Customer {
+  public static fromJson = (json : any) : Customer => {
     return new Customer(
       json?.id,
       json?.name,
@@ -47,7 +47,7 @@ export default class Customer {
     );
   }
 
-  public toJson() : Object {
+  public toJson = () : Object => {
     return {
       id: this.id,
       name: this.name,

@@ -13,7 +13,7 @@ export default class Category {
     this.imageSrc = imageSrc;
   }
 
-  static fromJson(json: any) : Category {
+  static fromJson = (json: any) : Category => {
     return new Category(
       json.id,
       json.name,
@@ -21,7 +21,7 @@ export default class Category {
     );
   }
 
-  toJson() : any {
+  public toJson = () : any => {
     return {
       id: this.id,
       name: this.name,

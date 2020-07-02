@@ -3,17 +3,17 @@ import {
   StyleSheet, 
   View,
   ScrollView,
-  Dimensions
+  Text
 } from 'react-native';
+import {useQuery} from '@apollo/client';
+import {homeQuery} from './queries';
 
 import AppBar from './AppBar';
 import CupomComponent from '../../components/Cupom';
-import Category from '../../models/Category/model';
-import CategoryComponent from '../../components/Category';
 import Slider from '../../components/Slider';
-import { useQuery } from '@apollo/react-hooks';
-import { homeQuery } from './queries';
-import CategoryView from './CategoryView';
+
+import CategoriesView from './CategoriesView';
+import RestaurantsView from './RestaurantsView';
 
 const styles = StyleSheet.create({
   container: {
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
 });
 
 const HomeScreen = () => {
-  const { data } = useQuery(homeQuery);
+  const {data, error} = useQuery(homeQuery);
 
   return (
     <View style={styles.container}>
@@ -62,9 +62,15 @@ const HomeScreen = () => {
         <View style={styles.aligner}>
           <CupomComponent value={8} />
 
-          <CategoryView items={data?.fetchAllCategories} />
+          <Text>{error?.message}</Text>
+
+          <CategoriesView items={data?.fetchAllCategories} />
 
           <Slider/> 
+
+          <RestaurantsView 
+            title='Lojas'
+            items={data?.fetchAllRestaurants} />
         </View>
       </ScrollView>
     </View>

@@ -20,7 +20,8 @@ const styles = StyleSheet.create({
   thumb: {
     width: 80,
     height: 61,
-    borderRadius: 4
+    borderRadius: 4,
+    resizeMode: 'cover'
   },
 
   label: {
@@ -35,7 +36,7 @@ const CategoryComponent = (props: any) => {
   return (
     <View style={styles.container}>
       <Image style={styles.thumb}
-             source={{uri: props.category.imageSrc}}/>
+             source={{uri: props.category.imageSrc}} />
 
       <Text style={styles.label}
             numberOfLines={1}>{props.category.name}</Text>

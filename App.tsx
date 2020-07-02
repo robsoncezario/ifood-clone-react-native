@@ -4,13 +4,20 @@ import React, {
   useEffect 
 } from 'react';
 import { RecoilRoot } from 'recoil';
-import { ApolloProvider } from '@apollo/react-hooks';
-import ApolloClient from 'apollo-boost';
+
+import {
+  ApolloClient,
+  ApolloProvider,
+  InMemoryCache
+} from '@apollo/client';
 
 import loadFontsAsync from './src/theme/fonts';
 import BottomNavigationBar from './src/screens/navigation';
 
-const client = new ApolloClient({uri: 'http://localhost:4000/graphql/'});
+const client = new ApolloClient({
+  uri: 'http://192.168.0.17:4000/graphql/',
+  cache: new InMemoryCache()
+});
 
 const App = () => {
   const [isReady, setReady] = useState(false);
