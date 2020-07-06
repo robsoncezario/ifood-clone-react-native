@@ -23,13 +23,14 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontFamily: 'SulSans-Bold',
+    fontFamily: 'SulSans-Regular',
     fontSize: 40,
     color: '#000000',
     marginTop: 10
   },
 
   scrollView: {
+    width: '100%',
     flex: 1,
     paddingLeft: 25,
     paddingRight: 25,
@@ -61,7 +62,8 @@ const CategoryDetails = ({route, navigation} : any) => {
 
         <RestaurantsView
           title={category.name}
-          items={data?.fetchAllRestaurantsByCategory} />
+          items={data?.fetchAllRestaurantsByCategory}
+          navigation={navigation} />
       </ScrollView>
     </View>
   )

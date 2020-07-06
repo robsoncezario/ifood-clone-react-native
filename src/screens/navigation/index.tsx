@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
 const Tabs = createBottomTabNavigator();
 
 const BottomNavigationBar = () => {
-  const screenList : Array<Screen> = [
+  const screenList: Array<Screen> = [
     new Screen(
       'Início',
       iFoodIcons.homeOutlined,

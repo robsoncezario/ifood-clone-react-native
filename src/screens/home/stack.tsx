@@ -4,7 +4,7 @@ import { StyleSheet} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '.';
 import CategoryDetails from './CategoryDetails';
-
+import RestaurantStack from '../../components/Restaurant/stack';
 
 const styles = StyleSheet.create({
   container: {
@@ -36,8 +36,16 @@ const HomeStack = () => {
         component={HomeScreen}
         options={{headerShown: false}} />
       <Stack.Screen 
-        name='CategoryDetails'
+        name='CategoryStack'
         component={CategoryDetails}
+        options={{
+          headerStyle: styles.container,
+          headerTitleAlign: 'center',
+          headerTitleStyle: styles.title,
+        }} />
+      <Stack.Screen 
+        name='RestaurantStack'
+        component={RestaurantStack}
         options={{
           headerStyle: styles.container,
           headerTitleAlign: 'center',

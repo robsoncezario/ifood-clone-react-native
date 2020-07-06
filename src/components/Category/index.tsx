@@ -37,9 +37,9 @@ const CategoryComponent = (props: any) => {
   const navigation = props.navigation;
 
   const handleClick = () => {
-    navigation.navigate('CategoryDetails', {
+    navigation.navigate('CategoryStack', {
       category: category
-    })
+    });
   }
 
   return (

@@ -2,12 +2,11 @@ import React from 'react';
 import { 
   StyleSheet, 
   Text,
-  FlatList,
   View
 } from 'react-native';
 
-import RestaurantComponent from '../../../components/Restaurant';
-import Restaurant from '../../../models/Restaurant/model';
+import OrderComponent from '../../../Order';
+import Order from '../../../../models/Order/model';
 
 const styles = StyleSheet.create({
   container: {
@@ -30,7 +29,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const RestaurantsView = (props: any) => {
+const OrdersView = (props: any) => {
   const itemList = props.items as Array<any>;
 
   return (
@@ -40,10 +39,9 @@ const RestaurantsView = (props: any) => {
           <Text style={styles.title}>{props.title}</Text>
 
           {itemList.map(item => (
-            <RestaurantComponent 
+            <OrderComponent
               key={item.id}
-              restaurant={Restaurant.fromJson(item)}
-              navigation={props.navigation} />
+              order={Order.fromJson(item)} />
           ))}
         </View>
       )}
@@ -51,4 +49,4 @@ const RestaurantsView = (props: any) => {
   );
 }
 
-export default RestaurantsView;
+export default OrdersView;

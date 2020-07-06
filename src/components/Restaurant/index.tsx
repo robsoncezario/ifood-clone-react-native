@@ -1,5 +1,6 @@
 import React from 'react';
 import { 
+  TouchableOpacity,
   StyleSheet, 
   Text, 
   View,
@@ -91,11 +92,20 @@ const styles = StyleSheet.create({
 
 const RestaurantComponent = (props: any) => {
   const restaurant = props.restaurant as Restaurant;
+  const navigation = props.navigation;
   const address = useRecoilValue(atoms.addressState);
   const dist = (address?.getDistanceBetween(restaurant.address) ?? 0) / 1000;
+  
+  const showDetails = () => {
+    navigation.navigate('RestaurantStack', {
+      restaurant: restaurant
+    });
+  }
 
   return (
-    <View style={styles.container}>
+    <TouchableOpacity 
+      style={styles.container}
+      onPress={showDetails}>
       <Image style={styles.image}
              source={{uri: restaurant.imageSrc}}
              resizeMode={'cover'} />
@@ -124,7 +134,7 @@ const RestaurantComponent = (props: any) => {
           )}
         </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   ) 
   /*return (
     <View style={styles.container}>

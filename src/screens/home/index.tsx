@@ -71,7 +71,8 @@ const HomeScreen = ({navigation, route} : any) => {
 
           <RestaurantsView 
             title='Lojas'
-            items={data?.fetchAllRestaurants} />
+            items={data?.fetchAllRestaurants}
+            navigation={navigation} />
         </View>
       </ScrollView>
     </View>
