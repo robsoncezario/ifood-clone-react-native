@@ -44,7 +44,8 @@ export default class Rating {
   }
 
   public static getAverage = (list: Rating[]) => {
-    return list.map(r => r.value)
+    return list.length === 0 ? 1.0 : 
+           list.map(r => r.value)
                .reduce((a, b) => a + b) / list.length;
   }
 }

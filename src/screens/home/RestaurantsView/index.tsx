@@ -33,21 +33,17 @@ const styles = StyleSheet.create({
 const RestaurantsView = (props: any) => {
   const itemList = props.items as Array<any>;
 
-  const renderItem = ({item} : {item: any}) => (
-    <RestaurantComponent 
-      key={item.id}
-      restaurant={Restaurant.fromJson(item)} />
-  );
-
   return (
     <>
       {itemList && (
         <View style={styles.container}>
           <Text style={styles.title}>{props.title}</Text>
-          <FlatList 
-            style={styles.flatList}
-            data={itemList}
-            renderItem={renderItem} />
+
+          {itemList.map(item => (
+            <RestaurantComponent 
+              key={item.id}
+              restaurant={Restaurant.fromJson(item)} />
+          ))}
         </View>
       )}
     </>

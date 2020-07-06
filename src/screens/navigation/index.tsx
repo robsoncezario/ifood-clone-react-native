@@ -13,6 +13,7 @@ import { iFoodIcons } from '../../theme/fonts';
 
 import HomeScreen  from '../../screens/home/index';
 import SearchScreen from '../search';
+import HomeStack from '../home/stack';
 
 const styles = StyleSheet.create({
   container: {
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const BottomTab = createBottomTabNavigator();
+const Tabs = createBottomTabNavigator();
 
 const BottomNavigationBar = () => {
   const screenList : Array<Screen> = [
@@ -35,7 +36,7 @@ const BottomNavigationBar = () => {
       'Início',
       iFoodIcons.homeOutlined,
       iFoodIcons.homeFilled,
-      HomeScreen
+      HomeStack
     ),
 
     new Screen(
@@ -62,7 +63,7 @@ const BottomNavigationBar = () => {
 
   return (
     <NavigationContainer>
-      <BottomTab.Navigator tabBar={({ state, descriptors, navigation }) => {
+      <Tabs.Navigator tabBar={({ state, descriptors, navigation }) => {
         return (
           <View style={styles.container}>
             {screenList.map((tab, index) => {
@@ -103,12 +104,12 @@ const BottomNavigationBar = () => {
 
       {screenList.map((tab, index) => {
         return (
-          <BottomTab.Screen
+          <Tabs.Screen
             key={tab.label}
             name={tab.label} 
             component={tab.component} />
         )})}
-      </BottomTab.Navigator>
+      </Tabs.Navigator>
     </NavigationContainer>
   );
 }

@@ -25,7 +25,8 @@ const CategoriesView = (props: any) => {
                     showsHorizontalScrollIndicator={false}>
           {itemList.map(category => (
             <CategoryComponent key={category.id}
-                               category={Category.fromJson(category)} />
+                               category={Category.fromJson(category)}
+                               navigation={props.navigation} />
             ))
 
           }

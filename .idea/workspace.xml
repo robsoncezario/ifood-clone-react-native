@@ -4,27 +4,12 @@
     <list default="true" id="c81af282-282e-46a4-83f9-75080f2078d2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/packager-info.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@apollo/react-hooks/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@apollo/react-hooks/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apollo-cache-inmemory/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apollo-cache-inmemory/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apollo-cache/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apollo-cache/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apollo-client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apollo-client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apollo-link-http/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apollo-link-http/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apollo-link/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apollo-link/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apollo-utilities/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apollo-utilities/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/graphql-tag/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/graphql-tag/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/graphql/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/graphql/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Category/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Category/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Restaurant/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Restaurant/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Address/model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Address/model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Category/model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Category/model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Customer/model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Customer/model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Order/model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Order/model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geolocator/atom.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/geolocator/atom.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Rating/model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Rating/model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Restaurant/model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Restaurant/model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/home/CategoryView/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/CategoryView/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/home/queries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/queries.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +81,7 @@
     <frame x="5" y="4" width="1346" height="688" extended-state="0" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.3569207" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.36780715" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />

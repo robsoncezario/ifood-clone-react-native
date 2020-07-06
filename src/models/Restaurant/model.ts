@@ -7,16 +7,15 @@ export default class Restaurant {
   public name?: string;
   public imageSrc?: string;
   public category?: Category;
-  public address?: Address;
-  public rating?: Array<Rating>;
+  public address!: Address;
+  public rating?: Rating[];
   public exclusive?: boolean;
   public minDeliveryInterval?: number;
   public maxDeliveryInterval?: number;
   public minDeliveryPrice?: number;
+  public deliveryCost?: number;
   public createdAt?: Date;
   public updatedAt?: Date;
-
-  private _deliveryCost?: number;
 
   public constructor(
     id: number,
@@ -43,7 +42,7 @@ export default class Restaurant {
     this.minDeliveryInterval = minDeliveryInterval;
     this.maxDeliveryInterval = maxDeliveryInterval;
     this.minDeliveryPrice = minDeliveryPrice;
-    this._deliveryCost = deliveryCost;
+    this.deliveryCost = deliveryCost;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }
@@ -84,8 +83,7 @@ export default class Restaurant {
     }
   }
 
-  // Pendência: Valor base + acréscimo da distância por km/h, aparentemente o iFood faz isso.
-  get deliveryCost(): number {
-    return this!._deliveryCost as number;
+  get average(): number {
+    return Rating.getAverage(this!.rating ?? []) * 5.0;
   }
 }

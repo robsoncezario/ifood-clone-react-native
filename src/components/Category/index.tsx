@@ -2,7 +2,7 @@ import React from 'react';
 import { 
   StyleSheet, 
   Text, 
-  View,
+  TouchableOpacity,
   Image 
 } from 'react-native';
 
@@ -33,14 +33,25 @@ const styles = StyleSheet.create({
 });
 
 const CategoryComponent = (props: any) => {
+  const category = props.category;
+  const navigation = props.navigation;
+
+  const handleClick = () => {
+    navigation.navigate('CategoryDetails', {
+      category: category
+    })
+  }
+
   return (
-    <View style={styles.container}>
+    <TouchableOpacity 
+      style={styles.container} 
+      onPress={handleClick}>
       <Image style={styles.thumb}
-             source={{uri: props.category.imageSrc}} />
+             source={{uri: category.imageSrc}} />
 
       <Text style={styles.label}
-            numberOfLines={1}>{props.category.name}</Text>
-    </View>
+            numberOfLines={1}>{category.name}</Text>
+    </TouchableOpacity>
   );
 }
 

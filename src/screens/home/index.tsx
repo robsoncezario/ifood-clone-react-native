@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation, route} : any) => {
   const {data, error} = useQuery(homeQuery);
 
   return (
@@ -64,7 +64,8 @@ const HomeScreen = () => {
 
           <Text>{error?.message}</Text>
 
-          <CategoriesView items={data?.fetchAllCategories} />
+          <CategoriesView items={data?.fetchAllCategories}
+                          navigation={navigation} />
 
           <Slider/> 
 
